@@ -1,0 +1,13 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zoekboek · Betaling</title>
+<style>body{margin:0;background:#FAF8F4;color:#16151B;font:17px/1.5 -apple-system,BlinkMacSystemFont,sans-serif;display:grid;place-items:center;min-height:100vh;text-align:center;padding:24px}
+h1{font-family:"New York",ui-serif,Georgia,serif;font-weight:400;font-size:32px;margin:0 0 8px}p{color:#66636E;margin:0 0 24px}
+a{display:inline-block;padding:16px 28px;border-radius:999px;background:#fff;color:#16151B;text-decoration:none;font-weight:600;border:1.5px solid #6A5AF9}</style></head>
+<body><main><h1 id="t">Terug naar Zoekboek…</h1><p id="s">Even geduld, we openen de app.</p><a id="b" href="#">Open Zoekboek</a></main>
+<script>
+const q=new URLSearchParams(location.search), n=q.get('n')||'', c=q.get('cancel')==='1';
+const target='zoekboek://betaald?n='+encodeURIComponent(n)+(c?'&cancel=1':'');
+document.getElementById('b').href=target;
+if(c){document.getElementById('t').textContent='Betaling afgebroken';document.getElementById('s').textContent='Er is niets afgeschreven.';}
+location.replace(target);
+</script></body></html>
